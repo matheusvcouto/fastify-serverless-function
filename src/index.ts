@@ -14,9 +14,11 @@ app.post('/teste', (
   return `Seu nome é ${name}`
 })
 
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3333;
+
 app.listen({
-  port: 3333,
+  port: port,
   host: '0.0.0.0'
 }).then(() => {
-  console.log('Runing!')
-})
+  console.log(`Running on port ${port}`);
+});
